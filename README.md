@@ -397,6 +397,7 @@ countplot("Embarked")
 https://en.wikipedia.org/wiki/RMS_Titanic#Collecting_passengers
 </br>
 
+
 ```python
 # An histogram of ages, in 16 bins, NA values dropped
 titanic_df['Age'].dropna().hist(bins=16, range=(0,80), alpha = .5).plot()
