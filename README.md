@@ -357,7 +357,7 @@ countplot("Pclass")
 
 
 
-![png](output_13_1.png)
+![png](images/output_13_1.png)
 
 
 #### There were more passengers travelling in 3rd Class than in 2nd and 1st Class -combined-. 
@@ -375,7 +375,7 @@ countplot("Sex")
 
 
 
-![png](output_15_1.png)
+![png](images/output_15_1.png)
 
 
 #### Male passengers outnumbered female passengers almost 2 to 1.
