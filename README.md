@@ -1,1 +1,3 @@
-# DAND_P2-Investigate-a-Dataset
+ # Surviving the Titanic: "Ticket please !"
+_by Eric Perbos-Brinck in fulfillment of Udacity’s Data Analyst Nanodegree, Project 2_
+</br>
