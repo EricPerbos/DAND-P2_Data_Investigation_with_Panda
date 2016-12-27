@@ -26,7 +26,7 @@ _by Eric Perbos-Brinck in fulfillment of Udacity’s Data Analyst Nanodegree, Pr
 - Passenger Fare
 - Cabin Number
 - Port of Embarkation (C = Cherbourg; Q = Queenstown; S = Southampton)
-
+</br>
 ### Questions:
 
 #### The main question we will try to answer: which single variable had the strongest impact on the survival rate of each passenger, if possible in a percentage/probability term ?
@@ -48,7 +48,7 @@ sns.set_style('whitegrid')
 # We upload the *.csv file
 titanic_df = pd.read_csv('titanic_data.csv', header=0)
 ```
-
+</br>
 #### We start with a first look at the data with a serie of Pandas functions.
 
 ```python
@@ -178,7 +178,7 @@ titanic_df.dtypes
     Embarked        object
     dtype: object
 
-
+</br>
 
 
 ```python
@@ -203,7 +203,7 @@ titanic_df.info()
     dtypes: float64(2), int64(5), object(5)
     memory usage: 83.6+ KB
     
-
+</br>
 #### The titanic_df.info() indicates that three colums lack some data and may require some data wrangling, if possible.
 - Age : 177 values missing (likely)
 - Cabin : 687 values missing (unlikely)
@@ -321,7 +321,7 @@ titanic_df.describe()
 #### The titanic_df.describe() provides two immediate observations:
 - Survival rate: only 38% of the 891 passengers survived
 - Age: the average age of all passengers was 29.7 years with a strong StDev of 14.5 years
-
+</br>
 ## Univariate Analysis: a first serie of visualizations of the passengers' profiles.
 
 
@@ -395,7 +395,7 @@ countplot("Embarked")
  S = Southampton; C = Cherbourg; Q = Queenstown
 #### An overwhelming majority of the passengers embarked in Southampton, its first port for collecting passengers.
 https://en.wikipedia.org/wiki/RMS_Titanic#Collecting_passengers
-
+</br>
 
 ```python
 # An histogram of ages, in 16 bins, NA values dropped
@@ -414,7 +414,7 @@ titanic_df['Age'].dropna().hist(bins=16, range=(0,80), alpha = .5).plot()
 
 
 #### This basic histogram shows the age repartition of 714 passengers (177 missing ) with a small long-tail in 55+
-
+</br>
 ## Further Exploration with multiple-variable functions
 
 #### Before wrangling the data, let's run a second set of exploratory functions.
@@ -438,7 +438,7 @@ swarmplot('Pclass', 'Age')
 #### The age of passengers in each class, with a swarmplot (aka. "beeswarm")
 http://stanford.edu/~mwaskom/software/seaborn-dev/generated/seaborn.swarmplot.html
 #### While the 1st Class has a rather homogeneous spread between 18 to 60, we can observe a clear overweight of the 18 to 35 range in 3rd Class
-
+</br>
 
 ```python
 boxplot('Pclass', 'Age')
@@ -457,7 +457,7 @@ boxplot('Pclass', 'Age')
 
 #### The age of passengers in each class, with a boxplot showing the quartiles (box) and the outliers (dots)
 https://stanford.edu/~mwaskom/software/seaborn/generated/seaborn.boxplot.html
-
+</br>
 
 ```python
 swarmplot('Sex', 'Age')
@@ -475,7 +475,7 @@ swarmplot('Sex', 'Age')
 
 
 #### The age of male and female passengers in swarmplot, with an overweight of 18 to 35 among male passengers.
-
+</br>
 
 ```python
 boxplot("Sex", "Age")
@@ -493,8 +493,9 @@ boxplot("Sex", "Age")
 
 
 #### The age of male and female passengers in boxplot
+</br>
+## Focused Exploration around the "Survived" variable.  
 
-## Focused Exploration around the "Survived" variable.
 #### We now start to explore the data to answer our main question:
 - Which single variable had the strongest impact on the survival rate of each passenger, if possible in a percentage/probability term ?
 
@@ -560,8 +561,8 @@ gb_mean('Survived')
 
 
 
-#### The titanic_df.groupby('Survived').mean() provides a first discrepancy between suvivors and non-survivors in the Pclass column, let's explore it further.
-
+#### The titanic_df.groupby('Survived').mean() provides a first discrepancy between survivors and non-survivors in the Pclass column, let's explore it further.
+</br>
 
 ```python
 gb_mean('Pclass')
@@ -627,7 +628,7 @@ gb_mean('Pclass')
 
 
 #### Here we get the first hint: the lower the cabin class of the passenger (1st to 3rd), the lower its survival rate (63% to  24%).
-
+</br>
 
 ```python
 barplot('Pclass', 'Survived')
@@ -645,7 +646,7 @@ barplot('Pclass', 'Survived')
 
 
 #### The same comparison of survival by class visualized in a barplot.
-
+</br>
 #### We continue the exploration with "Sex" column, female vs. male.
 
 
@@ -708,7 +709,7 @@ gb_mean('Sex')
 
 
 #### Here we get the second hint: female passengers had a very signficantly higher rate of survival than male passengers (74% vs 19%)
-
+</br>
 
 ```python
 barplot('Sex', 'Survived')
@@ -726,7 +727,7 @@ barplot('Sex', 'Survived')
 
 
 #### The same comparison of survival by "Sex" visualized in a barplot.
-
+</br>
 #### We continue the exploration with "Embarked" column, indicating in which port the passenger embarked.
 - C: Cherbourg (France)
 - Q: Queenstown (UK)
@@ -806,7 +807,7 @@ gb_mean('Embarked')
 #### A more careful look at the stats shows a discrepancy in the "Class" and the "Fare" between FR and UK embarkments:
 - The Cherbourg-embarked were in higher class (mean 1.88) than Queenstown/Southampton (2.35 to 2.90)
 - The Cherbourg-embarked paid a largely higher fare (59.95) than the UK-embarked (13.27 to 27.07)
-
+</br>
 
 ```python
 barplot('Embarked', 'Survived')
@@ -824,7 +825,7 @@ barplot('Embarked', 'Survived')
 
 
 #### The same comparison of survival by "Embarked" visualized in a barplot.
-
+</br>
 
 ```python
 sns.countplot(x='Survived', hue="Pclass", data=titanic_df, order=[0,1])
@@ -842,7 +843,7 @@ sns.countplot(x='Survived', hue="Pclass", data=titanic_df, order=[0,1])
 
 
 #### Survivors (1) vs Non-Survivors (0) according to "Pclass", in absolute values. The 3rd Class suffered the largest hit, almost 4 times the other classes.
-
+</br>
 
 ```python
 sns.barplot(x= 'Sex', y= 'Survived', hue="Pclass", data= titanic_df, ci= None)
@@ -860,7 +861,7 @@ sns.barplot(x= 'Sex', y= 'Survived', hue="Pclass", data= titanic_df, ci= None)
 
 
 #### A more detailled analysis of survival by Class and Sex, in percentage. Over 90% of female passengers in 1st and 2nd Class survived.
-
+</br>
 
 ```python
 sns.countplot(x='Survived', hue="Embarked", data=titanic_df, order=[0,1])
@@ -878,7 +879,7 @@ sns.countplot(x='Survived', hue="Embarked", data=titanic_df, order=[0,1])
 
 
 #### Survivors (1) vs Non-Survivors (0) according to "Embarked", in absolute values. Passengers embarked in Southampton suffered the largest hit, almost 9 times the other ports.
-
+</br>
 
 ```python
 sns.barplot(x= 'Sex', y= 'Survived', hue="Embarked", data= titanic_df, ci= None)
@@ -897,14 +898,14 @@ sns.barplot(x= 'Sex', y= 'Survived', hue="Embarked", data= titanic_df, ci= None)
 
 #### A more detailled analysis of survival by Port and Sex, in percentage, gives a different outlook than the previous graph in absolute values.
 #### While all ports for females had a similar impact on survival (70 to 85%), if you were a male to embark in Queenstown, you were doomed ! (less than 10% chance of survival).
-
+</br>
 
 
 ## Data Wrangling Phase
-
+</br>
 #### As shown earlier, there are several columns missing data as NA (not available), the key one being "Age".
 #### Also, some columns use a string format ("Sex" and "Embarked") which may complicate further calculations.
-#### Let's see if we can fix these, starting with the easiest steps.
+#### Let's see if we can fix these, starting with the easiest steps.  
 
 #### We now convert the "Sex" column from ('Female' or 'Male') into a new "Gender" column with numerical values ('0' or '1').
 
@@ -1032,8 +1033,8 @@ titanic_df.head()
 </div>
 
 
-
-#### Now we convert the "Embarked" column ('C' or 'Q' or 'S') into a new "Port' column with numerical values ('1' or '2' or '3').
+</br>
+#### Now we convert the "Embarked" column ('C' or 'Q' or 'S') into a new "Port' column with numerical values ('1' or '2' or '3').  
 
 
 ```python
@@ -1164,9 +1165,11 @@ titanic_df.head()
 </table>
 </div>
 
+</br>
 
 
-#### Final step in data wrangling, we fix the missing "Age" values.
+#### Final step in data wrangling, we fix the missing "Age" values.  
+
 #### I suggest that we build an array to calculate the median age by "Sex" and "Pclass", then use those values to replace the missing ones in a new column named "Gender".
 #### So we keep the original one "Age" intact, as opposed to forcing our way in with some *.pandas.df.fillna().
 
@@ -1200,7 +1203,7 @@ median_ages
     array([[ 35. ,  28. ,  21.5],
            [ 40. ,  30. ,  25. ]])
 
-
+</br>
 
 #### We created an array to calculate the median "Age" value by "Sex" and "Pclass".
 #### Now we will use those to replace the missing ones in a new column "AgeFill", proceding step by step with due tests for checks.
@@ -1305,7 +1308,7 @@ titanic_df[ titanic_df['Age'].isnull() ][['Gender','Pclass','Age','AgeFill']].he
 </table>
 </div>
 
-
+</br>
 
 
 ```python
@@ -1415,7 +1418,7 @@ titanic_df[ titanic_df['Age'].isnull() ][['Gender','Pclass','Age','AgeFill']].he
 
 #### This above is the survival rate by "Age", rounded to the interger value.
 
-
+</br>
 ```python
 fig = plt.figure(figsize=(18,18))
 ax1 = fig.add_subplot(211)
@@ -1437,6 +1440,7 @@ titanic_df['Age'].dropna().hist(bins=16, range=(0,80), alpha = .5).plot()
 
 #### The revised histogram of ages (Up) from the column "AgeFill", with the original one (Low).
 #### The new peak in 20:30 is artificially caused by the injection of 177 median values.
+</br>
 
 #### Now that we have an updated "Age" column with the "AgeFill" column, we can investigate the survival rate per age.
 #### For better reading, we fix the comma/floating values by forcing an 'int' type.
@@ -1461,13 +1465,14 @@ barplot('AgeFillInt', 'Survived')
 
 
 #### This above is the survival rate by "Age", rounded to the interger value.
-
+</br>
 
 ```python
 
 ```
 
-### From now on, I calculate more granular analysis based on three variables, such as "Embarked" + "Sex" + "Pclass" to find the most potent combination for death or survival.
+### From now on, I calculate more granular analysis based on three variables, such as "Embarked" + "Sex" + "Pclass" to find the most potent combination for death or survival.  
+
 #### First we count the passengers for each combination then the relevant survival rate
 
 
@@ -1502,7 +1507,7 @@ max_chance
     Name: Survived, dtype: float64
 
 
-
+</br>
 
 ```python
 titanic_df.groupby(['Embarked', 'Sex', 'Pclass'])['Survived'].count()
@@ -1537,10 +1542,13 @@ titanic_df.groupby(['Embarked', 'Sex', 'Pclass'])['Survived'].count()
 #### Several observations:
 - Some combinations had too few passengers (down to 1 only) to validate the survival rate
 - Others seemed more realistic like "The 43 Females in 1st Class embarked in Cherbourg" with 97.7% survival or "The 265 Males in 3rd Class embarked in Southampton" with 12.8% survival
+</br>
 
-## Chi-Squared Test
+## Chi-Squared Test  
+
 #### We've seen in "Mutiple-variable exploration of -Survived-" that Sex seemed to have the highest impact in the survival rate of the passengers.
-#### Let's run a Chi-Squared Test on the statistical significance of relationship between "Sex" and "Survived" variables.
+#### Let's run a Chi-Squared Test on the statistical significance of relationship between "Sex" and "Survived" variables.  
+
 - Probability of 0: both variable are dependant
 - Probability of 1: both variables are independant
 - Probability of less than 0.05: the relationship between the two variables is significant at 95% confidence
@@ -1569,6 +1577,7 @@ chisq_of_df_cols(titanic_df, 'Sex', 'Survived')
 
 
 #### Since the p-value < 0.05 (1.97 e-58), we can infer that Sex is a significant variable of Survived.
+</br>
 
 ## CONCLUSION
 ### Limitations
@@ -1576,6 +1585,7 @@ chisq_of_df_cols(titanic_df, 'Sex', 'Survived')
 https://en.wikipedia.org/wiki/RMS_Titanic#Survivors_and_victims
 - There were many missing values, including 177 "Ages" and over 680 "Cabin". We had to used median Age values par Sex and Pclass to fill in, thus skewing the data towards the medians.
 - The Fares values included Grouped-Purchase without indication of individual prices, thus preventing a true analysis per fare.
+</br>
 
 ### Summary
 #### We found out that three variables had a strong impact on the survival rate of passengers:
