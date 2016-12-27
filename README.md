@@ -51,13 +51,9 @@ titanic_df = pd.read_csv('titanic_data.csv', header=0)
 
 #### We start with a first look at the data with a serie of Pandas functions.
 
-
 ```python
 titanic_df.head()
 ```
-
-
-
 
 <div>
 <table border="1" class="dataframe">
