@@ -10,7 +10,7 @@ _by Eric Perbos-Brinck in fulfillment of Udacity’s Data Analyst Nanodegree, Pr
 #### In this challenge, we ask you to complete the analysis of what sorts of people were likely to survive.
 
 ##### https://www.kaggle.com/c/titanic
-
+</br>
 ### Project description:
 
 #### In this project, we are going to explore the dataset in *.csv of 891 passengers of the Titanic which includes key information such as the variables below:
