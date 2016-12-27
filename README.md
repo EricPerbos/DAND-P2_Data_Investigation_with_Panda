@@ -396,6 +396,7 @@ countplot("Embarked")
 #### An overwhelming majority of the passengers embarked in Southampton, its first port for collecting passengers.
 https://en.wikipedia.org/wiki/RMS_Titanic#Collecting_passengers
 </br>
+</br>
 
 
 ```python
