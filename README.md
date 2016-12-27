@@ -154,7 +154,7 @@ titanic_df.head()
 </table>
 </div>
 
-
+</br>
 
 
 ```python
