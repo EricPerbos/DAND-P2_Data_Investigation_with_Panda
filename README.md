@@ -343,7 +343,7 @@ def swarmplot(column1, column2):
 def barplot(column1, column2):
     return sns.barplot(x= column1, y= column2, data= titanic_df, ci= None)
 ```
-
+</br>
 
 ```python
 countplot("Pclass")
@@ -361,7 +361,7 @@ countplot("Pclass")
 
 
 #### There were more passengers travelling in 3rd Class than in 2nd and 1st Class -combined-. 
-
+</br>
 
 ```python
 countplot("Sex")
@@ -379,7 +379,7 @@ countplot("Sex")
 
 
 #### Male passengers outnumbered female passengers almost 2 to 1.
-
+</br>
 
 ```python
 countplot("Embarked")
