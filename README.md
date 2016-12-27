@@ -1548,6 +1548,7 @@ titanic_df.groupby(['Embarked', 'Sex', 'Pclass'])['Survived'].count()
 - Some combinations had too few passengers (down to 1 only) to validate the survival rate
 - Others seemed more realistic like "The 43 Females in 1st Class embarked in Cherbourg" with 97.7% survival or "The 265 Males in 3rd Class embarked in Southampton" with 12.8% survival
 </br>
+</br>
 
 ## Chi-Squared Test  
 
@@ -1583,6 +1584,8 @@ chisq_of_df_cols(titanic_df, 'Sex', 'Survived')
 
 #### Since the p-value < 0.05 (1.97 e-58), we can infer that Sex is a significant variable of Survived.
 </br>
+</br>
+
 
 ## CONCLUSION
 ### Limitations
