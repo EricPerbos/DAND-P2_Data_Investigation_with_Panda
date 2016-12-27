@@ -322,6 +322,7 @@ titanic_df.describe()
 - Survival rate: only 38% of the 891 passengers survived
 - Age: the average age of all passengers was 29.7 years with a strong StDev of 14.5 years
 </br>
+</br>
 
 
 ## Univariate Analysis: a first serie of visualizations of the passengers' profiles.
