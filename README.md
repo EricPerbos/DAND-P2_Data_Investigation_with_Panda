@@ -713,7 +713,7 @@ gb_mean('Sex')
 
 
 
-#### Here we get the second hint: female passengers had a very signficantly higher rate of survival than male passengers (74% vs 19%)
+#### Here we get the second hint: female passengers had a very significantly higher rate of survival than male passengers (74% vs 19%)
 </br>
 
 ```python
