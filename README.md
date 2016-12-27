@@ -393,7 +393,7 @@ countplot("Embarked")
 
 
 
-![png](output_17_1.png)
+![png](images/output_17_1.png)
 
 
  S = Southampton; C = Cherbourg; Q = Queenstown
@@ -414,7 +414,7 @@ titanic_df['Age'].dropna().hist(bins=16, range=(0,80), alpha = .5).plot()
 
 
 
-![png](output_19_1.png)
+![png](images/output_19_1.png)
 
 
 #### This basic histogram shows the age repartition of 714 passengers (177 missing ) with a small long-tail in 55+
@@ -436,7 +436,7 @@ swarmplot('Pclass', 'Age')
 
 
 
-![png](output_22_1.png)
+![png](images/output_22_1.png)
 
 
 #### The age of passengers in each class, with a swarmplot (aka. "beeswarm")
@@ -456,7 +456,7 @@ boxplot('Pclass', 'Age')
 
 
 
-![png](output_24_1.png)
+![png](images/output_24_1.png)
 
 
 #### The age of passengers in each class, with a boxplot showing the quartiles (box) and the outliers (dots)
@@ -475,7 +475,7 @@ swarmplot('Sex', 'Age')
 
 
 
-![png](output_26_1.png)
+![png](images/output_26_1.png)
 
 
 #### The age of male and female passengers in swarmplot, with an overweight of 18 to 35 among male passengers.
@@ -493,7 +493,7 @@ boxplot("Sex", "Age")
 
 
 
-![png](output_28_1.png)
+![png](images/output_28_1.png)
 
 
 #### The age of male and female passengers in boxplot
@@ -645,7 +645,7 @@ barplot('Pclass', 'Survived')
 
 
 
-![png](output_36_1.png)
+![png](images/output_36_1.png)
 
 
 #### The same comparison of survival by class visualized in a barplot.
@@ -726,7 +726,7 @@ barplot('Sex', 'Survived')
 
 
 
-![png](output_40_1.png)
+![png](images/output_40_1.png)
 
 
 #### The same comparison of survival by "Sex" visualized in a barplot.
@@ -824,7 +824,7 @@ barplot('Embarked', 'Survived')
 
 
 
-![png](output_44_1.png)
+![png](images/output_44_1.png)
 
 
 #### The same comparison of survival by "Embarked" visualized in a barplot.
@@ -842,7 +842,7 @@ sns.countplot(x='Survived', hue="Pclass", data=titanic_df, order=[0,1])
 
 
 
-![png](output_46_1.png)
+![png](images/output_46_1.png)
 
 
 #### Survivors (1) vs Non-Survivors (0) according to "Pclass", in absolute values. The 3rd Class suffered the largest hit, almost 4 times the other classes.
@@ -860,7 +860,7 @@ sns.barplot(x= 'Sex', y= 'Survived', hue="Pclass", data= titanic_df, ci= None)
 
 
 
-![png](output_48_1.png)
+![png](images/output_48_1.png)
 
 
 #### A more detailled analysis of survival by Class and Sex, in percentage. Over 90% of female passengers in 1st and 2nd Class survived.
@@ -878,7 +878,7 @@ sns.countplot(x='Survived', hue="Embarked", data=titanic_df, order=[0,1])
 
 
 
-![png](output_50_1.png)
+![png](images/output_50_1.png)
 
 
 #### Survivors (1) vs Non-Survivors (0) according to "Embarked", in absolute values. Passengers embarked in Southampton suffered the largest hit, almost 9 times the other ports.
@@ -896,7 +896,7 @@ sns.barplot(x= 'Sex', y= 'Survived', hue="Embarked", data= titanic_df, ci= None)
 
 
 
-![png](output_52_1.png)
+![png](images/output_52_1.png)
 
 
 #### A more detailled analysis of survival by Port and Sex, in percentage, gives a different outlook than the previous graph in absolute values.
@@ -1436,7 +1436,7 @@ titanic_df['Age'].dropna().hist(bins=16, range=(0,80), alpha = .5).plot()
 
 
 
-![png](output_72_1.png)
+![png](images/output_72_1.png)
 
 
 #### The revised histogram of ages (Up) from the column "AgeFill", with the original one (Low).
@@ -1461,7 +1461,7 @@ barplot('AgeFillInt', 'Survived')
 
 
 
-![png](output_75_1.png)
+![png](images/output_75_1.png)
 
 
 #### This above is the survival rate by "Age", rounded to the interger value.
