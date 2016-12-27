@@ -1471,12 +1471,13 @@ barplot('AgeFillInt', 'Survived')
 
 #### This above is the survival rate by "Age", rounded to the interger value.
 </br>
+</br>
 
 ```python
 
 ```
 
-### From now on, I calculate more granular analysis based on three variables, such as "Embarked" + "Sex" + "Pclass" to find the most potent combination for death or survival.  
+### From now on, we calculate more granular analysis based on three variables, such as "Embarked" + "Sex" + "Pclass" to find the most potent combination for death or survival.  
 
 #### First we count the passengers for each combination then the relevant survival rate
 
